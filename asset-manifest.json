@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/cookbookreact/static/css/main.0e2a52a8.css",
-    "main.js": "/cookbookreact/static/js/main.7a8e6965.js",
-    "index.html": "/cookbookreact/index.html",
-    "main.0e2a52a8.css.map": "/cookbookreact/static/css/main.0e2a52a8.css.map",
-    "main.7a8e6965.js.map": "/cookbookreact/static/js/main.7a8e6965.js.map"
+    "main.css": "/cookbook-mern/static/css/main.0e2a52a8.css",
+    "main.js": "/cookbook-mern/static/js/main.e45cece1.js",
+    "index.html": "/cookbook-mern/index.html",
+    "main.0e2a52a8.css.map": "/cookbook-mern/static/css/main.0e2a52a8.css.map",
+    "main.e45cece1.js.map": "/cookbook-mern/static/js/main.e45cece1.js.map"
   },
   "entrypoints": [
     "static/css/main.0e2a52a8.css",
-    "static/js/main.7a8e6965.js"
+    "static/js/main.e45cece1.js"
   ]
 }
