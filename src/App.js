@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DishCard from './DishCard';
 import SomeDish from './SomeDish';
@@ -7,17 +7,32 @@ import menu from './menu.js';
 import { GiChefToque } from 'react-icons/gi';
 import { IconContext } from 'react-icons';
 import { Route, Routes, Link } from 'react-router-dom';
-import useContentful from './useContentful';
+// import useContentful from './useContentful';
 import Receipe from './Receipe';
 import NoMatch from './NoMatch';
 
 const App = () => {
-  const { getTitles } = useContentful();
-  const allThrouseLocalStorage = JSON.parse(localStorage.getItem('titles'));
+  const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    getTitles().then((data) => localStorage.setItem('titles', JSON.stringify(data)));
-  }, []);
+    if (recipes.length === 0) {
+      async function getRecipes() {
+        const response = await fetch(`https://cookbook-backend-group3.herokuapp.com/recipes`);
+
+        if (!response.ok) {
+          const message = `An error occurred: ${response.statusText}`;
+          console.error(message);
+          return;
+        }
+
+        const records = await response.json();
+        setRecipes(records);
+      }
+
+      getRecipes();
+      return;
+    }
+  }, [recipes.length]);
 
   return (
     <div className="container mt-5">
@@ -39,11 +54,8 @@ const App = () => {
       <Routes>
         <Route path="/cookbookreact" element={<MainMenu />} />
 
-        <Route path="/cookbookreact/soups" element={<SomeDish prop={allThrouseLocalStorage} />} />
-        <Route
-          path="/cookbookreact/soups/:title"
-          element={<Receipe recipe={allThrouseLocalStorage} />}
-        />
+        <Route path="/cookbookreact/soups" element={<SomeDish />} />
+        <Route path="/cookbookreact/soups/:title" element={<Receipe />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
       <div>

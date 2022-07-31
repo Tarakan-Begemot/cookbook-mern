@@ -9,6 +9,7 @@ const NoMatch = () => {
   const variable1 = JSON.stringify(variable);
   const variable2 = variable1.replace('*', 'name');
   const variable3 = JSON.parse(variable2);
+  
   return (
     <>
       <div style={{ minHeight: 316 }} className="p-5 text-center m-5">
