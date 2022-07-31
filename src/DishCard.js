@@ -7,7 +7,7 @@ function DishCard({ dish }) {
   };
   return (
     <div className="col-lg-3 padding-edit my-2">
-      <Link to={'/cookbookreact/' + dish.title} className="text-decoration-none">
+      <Link to={'/cookbook-mern/' + dish.title} className="text-decoration-none">
         <div className="card p-2 shadow-lg m-auto" style={{ width: '95%', minHeight: 300 }}>
           <img src={dish.image} className="card-img-top" alt={capitalize(dish.title)} />
           <div className="card-body  py-auto">

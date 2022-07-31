@@ -45,17 +45,17 @@ const App = () => {
           </div>
         </IconContext.Provider>
         <Link
-          to="/cookbookreact"
+          to="/cookbook-mern"
           className="d-inline my-auto style-none"
           style={{ textDecoration: 'none' }}>
           <h1>CookBook</h1>
         </Link>
       </div>
       <Routes>
-        <Route path="/cookbookreact" element={<MainMenu />} />
+        <Route path="/cookbook-mern" element={<MainMenu />} />
 
-        <Route path="/cookbookreact/soups" element={<SomeDish />} />
-        <Route path="/cookbookreact/soups/:title" element={<Receipe />} />
+        <Route path="/cookbook-mern/soups" element={<SomeDish />} />
+        <Route path="/cookbook-mern/soups/:title" element={<Receipe />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
       <div>

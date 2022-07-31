@@ -8,7 +8,7 @@ function SomeDishCard({ recipe }) {
   return (
     <div className="col-lg-3 padding-edit my-2">
       <Link
-        to={'/cookbookreact/soups/' + recipe.title.toLowerCase().replaceAll(' ', '-')}
+        to={'/cookbook-mern/soups/' + recipe.title.toLowerCase().replaceAll(' ', '-')}
         className="text-decoration-none">
         <div className="card p-2 shadow-lg m-auto" style={{ width: '95%', minHeight: 300 }}>
           <div style={{ overflow: 'hidden' }}>
